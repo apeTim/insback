@@ -11,5 +11,6 @@ router.get('/data', function (req, res) {
     var country = ipData && ipData.country;
     res.json({ country: country });
 });
-app.use('/.netlify/functions', router);
+app.use('/.netlify/functions/api', router);
+module.exports = app;
 module.exports.handler = serverless(app);
